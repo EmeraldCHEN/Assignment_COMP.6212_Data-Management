@@ -65,9 +65,9 @@ CREATE TABLE Vendor
 
  
  CREATE TABLE Offer 
-(O#                    INT    NOT NULL IDENTITY(1,1),
+(O#             INT    NOT NULL IDENTITY(1,1),
  B#   		   		   INT    NOT NULL,
- P#            		   INT    NOT NULL,
+ P#         	   INT    NOT NULL,
  amount_offered		   MONEY  NOT NULL,
  CONSTRAINT Offer_pk PRIMARY KEY (O#),
  CONSTRAINT Offer_Buyer_fk FOREIGN KEY (B#) REFERENCES Buyer(B#) ON DELETE CASCADE,
@@ -75,11 +75,11 @@ CREATE TABLE Vendor
  
  
  CREATE TABLE Requirement 
-(Req#                  INT   NOT NULL IDENTITY(1,1),
- B#   		   		   INT   NOT NULL,
- S#            		   INT   NOT NULL,
- R#   		   		   INT   NOT NULL,
- C#            		   INT   NOT NULL,
+(Req#        INT   NOT NULL IDENTITY(1,1),
+ B#   		 	   INT   NOT NULL,
+ S#     		   INT   NOT NULL,
+ R#   		     INT   NOT NULL,
+ C#          INT   NOT NULL,
  CONSTRAINT Requirement_pk PRIMARY KEY (Req#),
  CONSTRAINT Requirement_Buyer_fk FOREIGN KEY (B#) REFERENCES Buyer(B#) ON DELETE CASCADE,
  CONSTRAINT Requirement_Suburb_fk FOREIGN KEY (S#) REFERENCES Suburb(S#) ON DELETE CASCADE,
