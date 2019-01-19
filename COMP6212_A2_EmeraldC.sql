@@ -1,4 +1,4 @@
--- Created by: Yuan Chen(Emerald 27044044) 
+-- Created by: Yuan Chen(Emerald) 
 
 CREATE DATABASE COMP6212_A2_EmeraldC
 Go
@@ -29,7 +29,6 @@ CREATE TABLE Vendor
  BCity          VARCHAR(20) NOT NULL, 
  ContactNo	    CHAR(10) NOT NULL,
  CONSTRAINT Buyer_pk PRIMARY KEY (B#) );
-
  
  
  CREATE TABLE Category
@@ -37,22 +36,16 @@ CREATE TABLE Vendor
  CName		   VARCHAR(30) NOT NULL  );
  
  
- 
- 
  CREATE TABLE Suburb
 (S#          INT   NOT NULL IDENTITY(1,1),
  SName		 VARCHAR(30) NOT NULL,
  CONSTRAINT Suburb_pk PRIMARY KEY (S#) );
 
-
- 
  
  CREATE TABLE Range 
 (R#            INT   IDENTITY(1,1) NOT NULL,
  range		   VARCHAR(30)  NOT NULL,
  CONSTRAINT Range_pk PRIMARY KEY (R#) );
- 
-
  
  
  CREATE TABLE Property 
@@ -81,7 +74,6 @@ CREATE TABLE Vendor
  CONSTRAINT Offer_Property_fk FOREIGN KEY (P#) REFERENCES Property(P#) ON DELETE CASCADE );
  
  
- 
  CREATE TABLE Requirement 
 (Req#                  INT   NOT NULL IDENTITY(1,1),
  B#   		   		   INT   NOT NULL,
@@ -95,8 +87,6 @@ CREATE TABLE Vendor
  CONSTRAINT Requirement_Category_fk FOREIGN KEY (C#) REFERENCES Category(C#) ON DELETE CASCADE  );
  
  
-
-
 /* --------  Populate 8 tables -----------------      */
 
 INSERT INTO Vendor VALUES
@@ -140,8 +130,6 @@ INSERT INTO Suburb VALUES('Oropi');
 INSERT INTO Suburb VALUES('Bayfair');
 INSERT INTO Suburb VALUES('Gate Pa');
 INSERT INTO Suburb VALUES('Greerton');
-
- 
  
  
 INSERT INTO Range VALUES('$100k to $200k'); 
@@ -150,8 +138,6 @@ INSERT INTO Range VALUES('$300k to $400k');
 INSERT INTO Range VALUES('$400k to $500k');
 INSERT INTO Range VALUES('$500k to $600k');
 
- 
- 
  
 INSERT INTO Property VALUES('598 Eros Ave',3,2,1,2,1);
 INSERT INTO Property VALUES('1052 Euismod St.',4,5,2,4,5);
@@ -165,7 +151,6 @@ INSERT INTO Offer VALUES(2,5,300);
 INSERT INTO Offer VALUES(3,1,245.8);
 INSERT INTO Offer VALUES(4,2,156.5);
 INSERT INTO Offer VALUES(5,4,425);
-
 
 
 INSERT INTO Requirement VALUES(2,3,5,5);
